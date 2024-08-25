@@ -1,0 +1,77 @@
+.profile {
+display: flex;
+padding: 34px 0 20px;
+border-bottom: 1px rgba(33, 33, 33, 0.4) solid;
+}
+
+.profile__avatar {
+    border-radius: 8px;
+    width: 190px;
+    padding: 0 20px 0 0;
+    margin: 0;
+}
+
+.profile__column {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile__name {
+    font-family: "Poppins Med", Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 32px;
+    line-height: 32px;
+    margin: 0 0 12px;
+    color: #212121;
+}
+
+.profile__description {
+    font-family: "Poppins Med", Arial, Helvetica, sans-serif;
+    margin: 0;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 16px;
+    color: #212121;
+    opacity: 70%;
+}
+
+.profile__edit-btn {
+    font-family: "Poppins Med", Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 16px;
+    color: #212121;
+    margin-top: auto;
+    background-color: #FCF5E5;
+    border-style: hidden;
+    text-align: start;
+}
+
+.profile__pencil {
+    width: 14px;
+    margin: 0 8px 0 0;
+}
+
+.profile__add-btn {
+    background-color: #212121;
+    color: #FCF5E5;
+    font-family: "Poppins Med", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 500;
+    border-radius: 8px;
+    padding: 18px 0;
+    width: 149px;
+    height: 52px;
+    margin-left: auto;
+    margin-top: auto;
+}
+
+.profile__plus {
+  width: 12px;
+  height: 12px;
+  padding: 0 8px 0 0;
+}

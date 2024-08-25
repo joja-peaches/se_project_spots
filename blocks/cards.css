@@ -1,0 +1,17 @@
+.cards {
+  padding: 20px 0 0;
+}
+
+.cards__list {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 413px);
+  gap: 36px 20px;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
+
+.cards__list:nth-last-child(1) {
+  padding-bottom: 36px;
+}
