@@ -15,3 +15,9 @@
 .cards__list:nth-last-child(1) {
   padding-bottom: 36px;
 }
+
+@media screen and (max-width: 627px) {
+  .cards__list {
+    grid-template-columns: repeat(auto-fit, 288px);
+  }
+}
