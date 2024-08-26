@@ -38,6 +38,12 @@
   opacity: 40%;
 }
 
+.card__like-btn:hover {
+  opacity: 100%;
+  transition: .5s;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 627px) {
   .card__image {
     height: 288px;
