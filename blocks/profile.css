@@ -103,7 +103,7 @@ border-bottom: 1px rgba(33, 33, 33, 0.4) solid;
 @media screen and (max-width: 627px) {
   .profile {
     flex-direction: column;
-    max-width 288px;
+    max-width: 288px;
     align-items: center;
     padding: 20px 0;
   }
