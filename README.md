@@ -16,4 +16,5 @@ Spots is a platform meant for web or mobile where users can share images, create
 
 This webpage is deployed to Github Pages:
 
-Deployment link:
+[Deployment link](https://joja-peaches.github.io/se_project_spots/)
+
