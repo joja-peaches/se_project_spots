@@ -18,3 +18,4 @@ This webpage is deployed to Github Pages:
 
 [Deployment link](https://joja-peaches.github.io/se_project_spots/)
 
+[Video](https://vimeo.com/1004728455?share=copy)
