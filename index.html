@@ -85,10 +85,27 @@
             </li>
           </ul>
         </section>
-        <footer class="footer page__section">
-          <p class="footer__copyright">2024 &#169; Spots</p>
-       </footer>
-    </main>
+      </main>
+      <footer class="footer page__section">
+        <p class="footer__copyright">2024 &#169; Spots</p>
+      </footer>
+      <div class="modal modal__opened">
+        <div class="modal__container">
+            <button type="button" class="modal__close-button"><img src="./images/x.svg" alt="x exit icon" class="modal__x"></button>
+            <h2 class="modal__title">Edit profile</h2>
+            <form name="edit-profile" class="modal__form">
+            <label for="name" class="modal__label">
+              Name
+              <input id="name" class="modal__input" placeholder="Type your name">
+            </label>
+            <label for="description" class="modal__label">
+              Description
+              <input id="description" class="modal__input" placeholder="Describe yourself">
+            </label>
+          <button type="submit" class="modal__submit-button">Save</button>
+          </form>
+        </div>
+      </div>
 </div>
 <script src="./scripts/index.js" defer></script>
 </body>
