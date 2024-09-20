@@ -25,15 +25,20 @@ const initialCards = [
   link: "https://i.imgur.covm/CFcBAd2.jpeg",
 },
 ];
-console.log(initialCards);
 
 const profileEditButton = document.querySelector(".profile__edit-btn");
-
 const editModal = document.querySelector("#edit-modal");
-
 const editModalCloseButton = editModal.querySelector(".modal__close-button");
 
+const profileName = document.querySelector(".profile__name");
+const editModalNameInput = editModal.querySelector("#profile-name-input");
+
+const profileDescription = document.querySelector(".profile__description");
+const editModalDescription = editModal.querySelector("#profile-description-input");
+
 function openModal() {
+  editModalNameInput.value = profileName.textContent;
+  editModalDescription.value = profileDescription.textContent;
   editModal.classList.add("modal__opened");
 }
 
@@ -44,10 +49,3 @@ function closeModal() {
 profileEditButton.addEventListener("click", openModal);
 
 editModalCloseButton.addEventListener("click", closeModal);
-
-
-//test
-
-// test
-
-////tetsetsesetsetstste
