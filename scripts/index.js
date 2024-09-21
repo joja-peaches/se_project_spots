@@ -50,6 +50,6 @@ profileEditButton.addEventListener("click", openModal);
 
 editModalCloseButton.addEventListener("click", closeModal);
 
-
+// 2/3. FORM SUBMISSION GOOD LUCK BITCH
 
 
