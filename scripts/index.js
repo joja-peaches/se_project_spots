@@ -36,6 +36,10 @@ const editModalNameInput = editModal.querySelector("#profile-name-input");
 const profileDescription = document.querySelector(".profile__description");
 const editModalDescription = editModal.querySelector("#profile-description-input");
 
+const editFormElement = editModal.querySelector(".modal__form");
+const nameInput = editFormElement.querySelector("#profile-name-input");
+const jobInput = editFormElement.querySelector("#profile-description-input");
+
 function openModal() {
   editModalNameInput.value = profileName.textContent;
   editModalDescription.value = profileDescription.textContent;
@@ -46,10 +50,15 @@ function closeModal() {
   editModal.classList.remove("modal__opened");
 }
 
+function handleEditFormSubmit(evt) {
+  evt.preventDefault();
+  profileName.textContent = nameInput.value;
+  profileDescription.textContent = jobInput.value;
+  closeModal();
+}
+
 profileEditButton.addEventListener("click", openModal);
 
 editModalCloseButton.addEventListener("click", closeModal);
 
-// 2/3. FORM SUBMISSION GOOD LUCK BITCH
-
-
+editFormElement.addEventListener("submit", handleEditFormSubmit);
