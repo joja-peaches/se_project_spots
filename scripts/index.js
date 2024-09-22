@@ -62,3 +62,5 @@ profileEditButton.addEventListener("click", openModal);
 editModalCloseButton.addEventListener("click", closeModal);
 
 editFormElement.addEventListener("submit", handleEditFormSubmit);
+
+// Rendering cards  Last Chapter
