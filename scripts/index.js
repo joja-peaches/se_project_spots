@@ -1,28 +1,28 @@
 const initialCards = [
 {
   name: "Venice Beach Skate Park",
-  link: "https://i.imgur.com/DNBmqc0.jpeg}",
+  link: "https://i.ibb.co/yghyG3H/venice.jpg",
 },
 {
   name: "Drinks in downtown LA",
-  link: "https://i.imgur.com/adQIaGo.jpeg",
+  link: "https://i.ibb.co/GFKk4mD/drink.jpg",
 },
 {
   name: "East Side of Los Angeles",
-  link: "https://i.imgur.com/atPkbSV.jpeg",
+  link: "https://i.ibb.co/PmSkQt7/night.jpg",
 },
 {
   name: "Mutato Muzika record production",
-  link: "https://i.imgur.com/H1yfTHh.jpeg",
+  link: "https://i.ibb.co/5GvtwCz/mutato.jpg",
 },
 {
   name: "Southern California beaches",
-  link: "https://i.imgur.com/LGEkmhf.jpeg",
+  link: "https://i.ibb.co/k0bnYQK/beach.jpg",
 },
 
 {
   name: "Beautiful cars in Tuningen, Germany",
-  link: "https://i.imgur.covm/CFcBAd2.jpeg",
+  link: "https://i.ibb.co/4jb33Yf/royce.jpg",
 },
 ];
 
@@ -63,4 +63,25 @@ editModalCloseButton.addEventListener("click", closeModal);
 
 editFormElement.addEventListener("submit", handleEditFormSubmit);
 
-// Rendering cards  Last Chapter
+// Rendering cards
+
+const cardTemplate = document.querySelector("#card-template");
+const cardsList = document.querySelector(".cards__list");
+
+function getCardElement(data) {
+  const cardElement = cardTemplate.content.querySelector(".card").cloneNode(true);
+
+  const cardNameEl = cardElement.querySelector(".card__title");
+  const cardImgEl = cardElement.querySelector(".card__image");
+
+  cardNameEl.textContent = data.name;
+  cardImgEl.src = data.link;
+  cardImgEl.alt = data.name;
+
+  return cardElement;
+}
+
+for (let i = 0; i < initialCards.length; i++) {
+  const cardsElement = getCardElement(initialCards[i]);
+  cardsList.append(cardsElement);
+}
