@@ -29,16 +29,15 @@ const initialCards = [
 const profileEditButton = document.querySelector(".profile__edit-btn");
 const editModal = document.querySelector("#edit-modal");
 const editModalCloseButton = editModal.querySelector(".modal__close-button");
-
 const profileName = document.querySelector(".profile__name");
 const editModalNameInput = editModal.querySelector("#profile-name-input");
-
 const profileDescription = document.querySelector(".profile__description");
 const editModalDescription = editModal.querySelector("#profile-description-input");
-
-const editFormElement = editModal.querySelector(".modal__form");
+const editFormElement = document.forms.namedItem("edit-profile");
 const nameInput = editFormElement.querySelector("#profile-name-input");
 const jobInput = editFormElement.querySelector("#profile-description-input");
+const cardTemplate = document.querySelector("#card-template");
+const cardsList = document.querySelector(".cards__list");
 
 function openModal() {
   editModalNameInput.value = profileName.textContent;
@@ -56,17 +55,6 @@ function handleEditFormSubmit(evt) {
   profileDescription.textContent = jobInput.value;
   closeModal();
 }
-
-profileEditButton.addEventListener("click", openModal);
-
-editModalCloseButton.addEventListener("click", closeModal);
-
-editFormElement.addEventListener("submit", handleEditFormSubmit);
-
-// Rendering cards
-
-const cardTemplate = document.querySelector("#card-template");
-const cardsList = document.querySelector(".cards__list");
 
 function getCardElement(data) {
   const cardElement = cardTemplate.content.querySelector(".card").cloneNode(true);
@@ -86,6 +74,8 @@ for (let i = 0; i < initialCards.length; i++) {
   cardsList.append(cardsElement);
 }
 
+profileEditButton.addEventListener("click", openModal);
 
+editModalCloseButton.addEventListener("click", closeModal);
 
-UPDATE
+editFormElement.addEventListener("submit", handleEditFormSubmit);
