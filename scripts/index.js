@@ -1,28 +1,28 @@
 const initialCards = [
 {
   name: "Venice Beach Skate Park",
-  link: "https://i.ibb.co/yghyG3H/venice.jpg",
+  link: "https://iili.io/dseeBzQ.jpg",
 },
 {
   name: "Drinks in downtown LA",
-  link: "https://i.ibb.co/GFKk4mD/drink.jpg",
+  link: "https://iili.io/dseeF5b.jpg",
 },
 {
   name: "East Side of Los Angeles",
-  link: "https://i.ibb.co/PmSkQt7/night.jpg",
+  link: "https://iili.io/dseefmx.jpg",
 },
 {
   name: "Mutato Muzika record production",
-  link: "https://i.ibb.co/5GvtwCz/mutato.jpg",
+  link: "https://iili.io/dseeKej.jpg",
 },
 {
   name: "Southern California beaches",
-  link: "https://i.ibb.co/k0bnYQK/beach.jpg",
+  link: "https://iili.io/dsee3du.jpg",
 },
 
 {
   name: "Beautiful cars in Tuningen, Germany",
-  link: "https://i.ibb.co/4jb33Yf/royce.jpg",
+  link: "https://iili.io/dseenLB.md.jpg",
 },
 ];
 
@@ -43,11 +43,11 @@ const jobInput = editFormElement.querySelector("#profile-description-input");
 function openModal() {
   editModalNameInput.value = profileName.textContent;
   editModalDescription.value = profileDescription.textContent;
-  editModal.classList.add("modal__opened");
+  editModal.classList.add("modal_opened");
 }
 
 function closeModal() {
-  editModal.classList.remove("modal__opened");
+  editModal.classList.remove("modal_opened");
 }
 
 function handleEditFormSubmit(evt) {
