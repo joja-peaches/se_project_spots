@@ -85,3 +85,7 @@ for (let i = 0; i < initialCards.length; i++) {
   const cardsElement = getCardElement(initialCards[i]);
   cardsList.append(cardsElement);
 }
+
+
+
+UPDATE
