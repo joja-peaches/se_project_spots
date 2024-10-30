@@ -56,7 +56,7 @@
 
 .card__like-btn:hover {
   opacity: 1;
-  transition: .5s;
+  transition: opacity .5s;
   cursor: pointer;
 }
 
@@ -68,7 +68,7 @@
 .card__like-btn_liked:hover {
   background-image: url("../images/liked-hover.svg");
   opacity: 1;
-  transition: .5s;
+  transition: opacity .5s;
 }
 
 @media screen and (max-width: 627px) {

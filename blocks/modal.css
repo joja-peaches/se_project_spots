@@ -10,10 +10,14 @@
   align-items: center;
   padding: 0 16px;
   visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear .5s,opacity .5s linear;
 }
 
 .modal_opened {
   visibility: visible;
+  opacity: 1;
+  transition: opacity .5s;
 }
 
 .modal__container {
@@ -80,14 +84,14 @@
 }
  
 .modal__close-button:hover {
-  transition-duration: background-image .5s;
+  transition: opacity .5s;
   cursor: pointer;
   opacity: 1;
 }
 
 .modal__x:hover {
   opacity: 1;
-  transition: 5s;
+  transition: opacity 5s;
   cursor: pointer;
 }
 
@@ -95,11 +99,12 @@
   background: url(../images/x-preview.svg);
   top: 0px;
   opacity: 1;
+  display: flex;
 }
 
 .modal__close_type_preview:hover {
   opacity: .4;
-  transition: .5s;
+  transition: opacity .5s;
 }
 
 .modal__form {
@@ -159,7 +164,7 @@
 
 .modal__submit-button:hover {
   opacity: .8;
-  transition: background-color .5s;
+  transition: opacity .5s;
   cursor: pointer;
 }
 
