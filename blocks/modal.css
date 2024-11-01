@@ -193,7 +193,7 @@
 
   .modal__image {
     border-radius: 4px;
-    width: 288px;
+    max-width: 288px;
   }
 
   .modal__top {
@@ -207,7 +207,7 @@
 
   .modal__close-button_type_preview {
     top: -18px;
-    right: -12px;
+    right: 12px;
   }
 
   .modal__title {
