@@ -189,11 +189,13 @@
  
   .modal__container_type_preview {
     max-width: 288px;
+    padding: 0px;
   }
 
   .modal__image {
     border-radius: 4px;
     max-width: 288px;
+    object-fit: contain;
   }
 
   .modal__top {
@@ -206,8 +208,8 @@
   }
 
   .modal__close-button_type_preview {
-    top: -18px;
-    right: 12px;
+    top: -46px;
+    right: 0px;
   }
 
   .modal__title {
