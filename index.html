@@ -75,7 +75,11 @@
                 id="profile-name-input"
                 class="modal__input"
                 placeholder="Type your name"
+                minlength="2"
+                maxlength="40"
+                required
               />
+              <span class="modal__error"></span>
             </label>
             <label for="profile-description-input" class="modal__label">
               Description
@@ -83,7 +87,11 @@
                 id="profile-description-input"
                 class="modal__input"
                 placeholder="Describe yourself"
+                minlength="2"
+                maxlength="200"
+                required
               />
+              <span class="modal__error"></span>
             </label>
             <button type="submit" class="modal__submit-button">Save</button>
           </form>
@@ -108,7 +116,9 @@
                 name="link"
                 placeholder="Paste a link to the picture"
                 type="url"
+                required
               />
+              <span class="modal__error"></span>
             </label>
             <label for="add-card-name-input" class="modal__label">
               Caption
@@ -118,7 +128,11 @@
                 name="name"
                 placeholder="Type your caption"
                 type="text"
+                minlength="2"
+                maxlength="30"
+                required
               />
+              <span class="modal__error"> </span>
             </label>
             <button type="submit" class="modal__submit-button">Save</button>
           </form>
@@ -136,6 +150,7 @@
         <p class="modal__caption"></p>
       </div>
     </div>
+    <script src="./scripts/validation.js" defer></script>
     <script src="./scripts/index.js" defer></script>
   </body>
 </html>
