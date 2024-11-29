@@ -58,17 +58,6 @@ const previewModalCaption = previewModal.querySelector(".modal__caption");
 
 const cardSubmitButton = addCardModal.querySelector(".modal__submit-button");
 
-/*
-    Add the event listener when the modal opens and remove it when it closes. 
-
-    Remember that you can’t remove an event listener that has an anonymous 
-    handler function. (Refer back to our lesson on the topic for a refresher.)
-
-    set the listener when the modal opens, do not fail to remove it on modal close
-*/
-
-
-
 function openModal(modal) {
   modal.classList.add("modal_opened");
   document.addEventListener("keydown", function escClose(evt) {
