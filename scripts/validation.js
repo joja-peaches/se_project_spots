@@ -67,5 +67,3 @@ const enableValidation = (config) => {
 };
 
 enableValidation(settings);
-
-// config branch
