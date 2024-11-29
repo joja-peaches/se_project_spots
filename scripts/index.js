@@ -27,6 +27,7 @@ const initialCards = [
 ];
 
 const profileEditButton = document.querySelector(".profile__edit-btn");
+
 const editModal = document.querySelector("#edit-modal");
 const editModalCloseButton = editModal.querySelector(".modal__close-button");
 const profileName = document.querySelector(".profile__name");
@@ -57,20 +58,42 @@ const previewModalCaption = previewModal.querySelector(".modal__caption");
 
 const cardSubmitButton = addCardModal.querySelector(".modal__submit-button");
 
+/*
+    Add the event listener when the modal opens and remove it when it closes. 
+
+    Remember that you can’t remove an event listener that has an anonymous 
+    handler function. (Refer back to our lesson on the topic for a refresher.)
+
+    set the listener when the modal opens, do not fail to remove it on modal close
+*/
+
+
+
 function openModal(modal) {
   modal.classList.add("modal_opened");
-}
+  document.addEventListener("keydown", function escClose(evt) {
+    if (evt.key === 'Escape') {
+      closeModal(modal);
+    }
+  });
+};
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
-}
+  document.removeEventListener("keydown", function escClose(evt) {
+    if (evt.key === 'Escape') {
+      closeModal(modal);
+    }
+  });
+};
+
 
 function handleEditFormSubmit(evt) {
   evt.preventDefault();
   profileName.textContent = nameInput.value;
   profileDescription.textContent = jobInput.value;
   closeModal(editModal);
-}
+};
 
 function getCardElement(data) {
   const cardElement = cardTemplate.content
@@ -115,7 +138,7 @@ function handleAddCardSubmit(evt, addCard = "prepend") {
   cardsList[addCard](newCard);
   closeModal(addCardModal);
   evt.target.reset();
-  disableButton(cardSubmitButton);
+  disableButton(cardSubmitButton, settings);
 }
 
 initialCards.forEach((item) => {
@@ -126,13 +149,18 @@ initialCards.forEach((item) => {
 profileEditButton.addEventListener("click", () => {
   editModalNameInput.value = profileName.textContent;
   editModalDescription.value = profileDescription.textContent;
- // resetValidation(editFormElement, [editModalNameInput, editModalDescription]);
   openModal(editModal);
 });
 
-
-
-
+const modals = Array.from(document.querySelectorAll(".modal"));
+const modalClosed = modals.forEach((modal) => {
+    document.addEventListener("click", (evt) => {
+    const closedModalEl = evt.target;
+    if (closedModalEl.classList !== ".modal") {
+      closeModal(closedModalEl);
+      };
+    });
+});
 
 editModalCloseButton.addEventListener("click", () => {
   closeModal(editModal);
