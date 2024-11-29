@@ -1,15 +1,19 @@
-// const showInputError = (formElement, inputElement, errorMessage.validationMessage) => {
+const showInputError = (formElement, inputElement, errorMessage) => {
+    const errorMsgEl = document.querySelector(`#${inputElement.id}-error`);
+    errorMsgEl.textContent = errorMessage;
+};
 
-// };
+const hideInputError = (formElement, inputElement) => {
+    const errorMsgEl = document.querySelector(`#${inputElement.id}-error`);
+    errorMsgEl.textContent = "";
+};
 
 const checkInputValidity = (formElement, inputElement) => {
-    // if (!inputElement.validity.valid) {
-    //     console.log("invalid");
-    //     // showInputError(formElement, inputElement, errorMessage.validationMessage);
-    // } else {
-    //     console.log("valid");
-    // }
-    console.log(inputElement.validationMessage);
+    if (!inputElement.validity.valid) {
+        showInputError(formElement, inputElement, inputElement.validationMessage);
+    } else {
+        hideInputError(formElement, inputElement);
+    }
 };
 
 const setEventListeners = (formElement) => {
