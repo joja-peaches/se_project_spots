@@ -144,6 +144,3 @@ previewModalClose.addEventListener("click", () => {
 
 editFormElement.addEventListener("submit", handleEditFormSubmit);
 newPostForm.addEventListener("submit", handleAddCardSubmit);
-
-
-// SPRINT 6 branch test

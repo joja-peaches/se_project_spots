@@ -167,7 +167,7 @@
 }
 
 .modal__input-error_active {
-
+  border: 1px solid  rgb(255, 0, 0, .6);
 }
 
 .modal__submit-button {
@@ -181,7 +181,11 @@
   font-size: 16px;
   line-height: 16px;
   color: #fcf5e5;
-  background-color: #212121;
+  background-color: rgb(33, 33, 33, 1);
+}
+
+.modal__submit-button_inactive {
+  background-color: rgb(33, 33, 33, .5);
 }
 
 .modal__submit-button:hover {
