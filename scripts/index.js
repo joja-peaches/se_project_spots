@@ -55,6 +55,8 @@ const previewModalClose = previewModal.querySelector(
 );
 const previewModalCaption = previewModal.querySelector(".modal__caption");
 
+const cardSubmitButton = addCardModal.querySelector(".modal__submit-button");
+
 function openModal(modal) {
   modal.classList.add("modal_opened");
 }
@@ -113,6 +115,7 @@ function handleAddCardSubmit(evt, addCard = "prepend") {
   cardsList[addCard](newCard);
   closeModal(addCardModal);
   evt.target.reset();
+  disableButton(cardSubmitButton);
 }
 
 initialCards.forEach((item) => {
@@ -123,8 +126,13 @@ initialCards.forEach((item) => {
 profileEditButton.addEventListener("click", () => {
   editModalNameInput.value = profileName.textContent;
   editModalDescription.value = profileDescription.textContent;
+ // resetValidation(editFormElement, [editModalNameInput, editModalDescription]);
   openModal(editModal);
 });
+
+
+
+
 
 editModalCloseButton.addEventListener("click", () => {
   closeModal(editModal);
