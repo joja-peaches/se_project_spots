@@ -41,6 +41,8 @@ const nameInput = editFormElement.querySelector("#profile-name-input");
 const jobInput = editFormElement.querySelector("#profile-description-input");
 const cardTemplate = document.querySelector("#card-template");
 const cardsList = document.querySelector(".cards__list");
+const modals = document.querySelectorAll(".modal");
+
 
 const newPostOpenButton = document.querySelector(".profile__add-btn");
 const addCardModal = document.querySelector("#add-card-modal");
@@ -60,7 +62,7 @@ const cardSubmitButton = addCardModal.querySelector(".modal__submit-button");
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
-  document.addEventListener("keydown", function escClose(evt) {
+  this.addEventListener("keydown", function escClose(evt) {
     if (evt.key === 'Escape') {
       closeModal(modal);
     }
@@ -69,18 +71,19 @@ function openModal(modal) {
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
-  document.removeEventListener("keydown", function escClose(evt) {
+  this.removeEventListener("keydown", function escClose(evt) {
     if (evt.key === 'Escape') {
       closeModal(modal);
     }
   });
 };
 
-
 function handleEditFormSubmit(evt) {
   evt.preventDefault();
   profileName.textContent = nameInput.value;
   profileDescription.textContent = jobInput.value;
+  evt.target.reset();
+  disableButton(cardSubmitButton);
   closeModal(editModal);
 };
 
@@ -115,7 +118,9 @@ function getCardElement(data) {
   return cardElement;
 }
 
-function handleAddCardSubmit(evt, addCard = "prepend") {
+
+
+function handleAddCardSubmit(evt) {
   evt.preventDefault();
 
   const inputValues = {
@@ -124,7 +129,7 @@ function handleAddCardSubmit(evt, addCard = "prepend") {
   };
   const newCard = getCardElement(inputValues);
 
-  cardsList[addCard](newCard);
+  cardsList.prepend(newCard);
   closeModal(addCardModal);
   evt.target.reset();
   disableButton(cardSubmitButton, settings);
@@ -141,15 +146,14 @@ profileEditButton.addEventListener("click", () => {
   openModal(editModal);
 });
 
-const modals = Array.from(document.querySelectorAll(".modal"));
-const modalClosed = modals.forEach((modal) => {
-    document.addEventListener("click", (evt) => {
-    const closedModalEl = evt.target;
-    if (closedModalEl.classList !== ".modal") {
-      closeModal(closedModalEl);
-      };
-    });
+modals.forEach((popup) => {
+  popup.addEventListener("mousedown", (evt) => {
+    if (evt.target.classList.contains("modal_opened")) {
+      closeModal(popup);
+    }
+  });
 });
+
 
 editModalCloseButton.addEventListener("click", () => {
   closeModal(editModal);

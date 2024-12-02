@@ -197,12 +197,13 @@
 @media screen and (max-width: 627px) {
   .modal {
     padding: 0 10px;
+    display: flex;
   }
 
   .modal__container {
     width: 300px;
-    height: 336px;
     padding: 22px 12px;
+    
   }
  
   .modal__container_type_preview {
@@ -243,7 +244,6 @@
 
   .modal__form {
     width: 276px;
-    height: 248px;
   }
 
   .modal__label {
