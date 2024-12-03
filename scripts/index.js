@@ -83,7 +83,7 @@ function handleEditFormSubmit(evt) {
   profileName.textContent = nameInput.value;
   profileDescription.textContent = jobInput.value;
   evt.target.reset();
-  disableButton(cardSubmitButton);
+  disableButton(cardSubmitButton, settings);
   closeModal(editModal);
 };
 
