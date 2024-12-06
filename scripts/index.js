@@ -62,20 +62,12 @@ const cardSubmitButton = addCardModal.querySelector(".modal__submit-button");
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
-  this.addEventListener("keydown", function escClose(evt) {
-    if (evt.key === 'Escape') {
-      closeModal(modal);
-    }
-  });
+  document.addEventListener("keydown", handleEscapeKey) ;
 };
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
-  this.removeEventListener("keydown", function escClose(evt) {
-    if (evt.key === 'Escape') {
-      closeModal(modal);
-    }
-  });
+  document.removeEventListener("keydown", handleEscapeKey);
 };
 
 function handleEditFormSubmit(evt) {
@@ -118,7 +110,14 @@ function getCardElement(data) {
   return cardElement;
 }
 
-
+function handleEscapeKey(evt) {
+  if (evt.key === "Escape") {
+    const openModal = document.querySelector(".modal_opened");
+    if (openModal) {
+      closeModal(openModal);
+    }
+  }
+}
 
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
@@ -144,6 +143,7 @@ profileEditButton.addEventListener("click", () => {
   editModalNameInput.value = profileName.textContent;
   editModalDescription.value = profileDescription.textContent;
   openModal(editModal);
+  resetValidation(editFormElement, [editModalNameInput, editModalDescription], settings);
 });
 
 modals.forEach((popup) => {
