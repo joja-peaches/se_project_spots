@@ -73,7 +73,6 @@ const resetValidation = (formElement, inputList, config) => {
     inputList.forEach((input) => {
         hideInputError(formElement, input, config);
     });
-    disableButton(submitButtonSelector);
 };
 
 enableValidation(settings);
