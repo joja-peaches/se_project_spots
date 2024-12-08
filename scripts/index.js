@@ -75,7 +75,6 @@ function handleEditFormSubmit(evt) {
   profileName.textContent = nameInput.value;
   profileDescription.textContent = jobInput.value;
   evt.target.reset();
-  disableButton(cardSubmitButton, settings);
   closeModal(editModal);
 };
 
@@ -131,7 +130,6 @@ function handleAddCardSubmit(evt) {
   cardsList.prepend(newCard);
   closeModal(addCardModal);
   evt.target.reset();
-  disableButton(cardSubmitButton, settings);
 }
 
 initialCards.forEach((item) => {
