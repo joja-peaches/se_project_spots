@@ -1,3 +1,6 @@
 {
-    "liveServer.settings.port": 5501
+    "liveServer.settings.port": 5501,
+    // added below setting during troubleshooting, may need to remove later
+    "debug.javascript.codelens.npmScripts": "never",
+    //
 }
