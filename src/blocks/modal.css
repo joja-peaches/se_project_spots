@@ -339,6 +339,10 @@
     width: 276px;
   }
 
+  .modal__delete-button {
+    width: 156px;
+  }
+
   .modal__delete-title {
     text-align: center;
   }
