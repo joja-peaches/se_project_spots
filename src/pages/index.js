@@ -159,15 +159,12 @@ function handlePostCard(evt) {
   const postCardSubmitBtn = evt.submitter;
   setButtonText(postCardSubmitBtn, true);
 
-  api.postCard({ name: newPostCaption.value, link: newPostImageLink.value})
+  api.postCard({ name: newPostCaption.value, link: newPostImageLink.value })
   .then((data) => {
-    const inputValues = {
-      name: newPostCaption.value,
-      link: newPostImageLink.value,
-    };
-    const newCard = getCardElement(inputValues);
-  
+    const newCard = getCardElement(data);
+
     cardsList.prepend(newCard);
+
     closeModal(addCardModal);
     evt.target.reset();
   })
