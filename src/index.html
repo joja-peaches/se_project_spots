@@ -76,7 +76,7 @@
             <img src="<%=require('./images/x.svg')%>" alt="x exit icon" class="modal__x" />
           </button>
           <h2 class="modal__title">Edit profile</h2>
-          <form name="edit-profile" class="modal__form" novalidate>
+          <form name="edit-profile" class="modal__form" id="edit-profile-form" novalidate>
             <label for="profile-name-input" class="modal__label">
               Name
               <input
@@ -164,7 +164,7 @@
           <img src="<%=require('./images/x.svg')%>" alt="x exit icon" class="modal__x" />
         </button>
         <h3 class="modal__title">Edit profile avatar</h3>
-        <form name="edit-profile" class="modal__form" novalidate>
+        <form name="edit-profile" class="modal__form" id="edit-avatar-form" novalidate>
           <label for="profile-avatar-input" class="modal__label">
             Profile Picture
             <input
@@ -189,7 +189,7 @@
         >
         </button>
         <h3 class="modal__title modal__delete-title">Are you sure you want to delete this image?</h3>
-        <form name="delete-form" class="modal__form modal__form_type_delete" novalidate>
+        <form name="delete-form" class="modal__form modal__form_type_delete" id="delete-card-form" novalidate>
           <button type="submit" class="modal__submit-button modal__delete-button">Delete</button>
           <button type="button" class="modal__cancel-button">Cancel</button>
         </form>
