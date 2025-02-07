@@ -79,6 +79,7 @@ const editModalNameInput = editModal.querySelector("#profile-name-input");
 const editModalDescription = editModal.querySelector(
   "#profile-description-input"
 );
+const modalSubmitButton = editModal.querySelector("modal__submit-button");
 
 // Card elements
 const cardTemplate = document.querySelector("#card-template");
