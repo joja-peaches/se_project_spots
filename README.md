@@ -8,7 +8,8 @@ Spots is a platform meant for web or mobile where users can share images, create
 
 ## Tech Stack
 * HTML
-* CSS 
+* CSS
+* JavaScript
 * Figma  
 * Responsive Design
   
